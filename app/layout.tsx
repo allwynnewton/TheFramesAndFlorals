@@ -25,8 +25,22 @@ const script = Pinyon_Script({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://theframesandflorals.vercel.app'),
   title: `${couple.groom} & ${couple.bride} · ${wedding.dateShort}`,
   description: `Together with their families, ${couple.groom} and ${couple.bride} invite you to celebrate their wedding — ${wedding.dateLabel}, ${wedding.city}.`,
+  openGraph: {
+    title: `${couple.groom} & ${couple.bride}`,
+    description: `Together with their families, ${couple.groom} and ${couple.bride} invite you to celebrate their wedding — ${wedding.dateLabel}, ${wedding.city}.`,
+    url: 'https://theframesandflorals.vercel.app',
+    siteName: `${couple.groom} & ${couple.bride}`,
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: `${couple.groom} & ${couple.bride} · ${wedding.dateShort}`,
+    description: `Together with their families, ${couple.groom} and ${couple.bride} invite you to celebrate their wedding — ${wedding.dateLabel}, ${wedding.city}.`,
+  },
 };
 
 export const viewport: Viewport = {
