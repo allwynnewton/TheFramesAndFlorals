@@ -1,0 +1,19 @@
+/node_modules
+/.next
+/out
+/build
+
+# raw upload staging (the site uses the copies in /public)
+/sources
+
+# local Claude Code tooling / editor config
+/.claude
+
+# TypeScript build cache
+*.tsbuildinfo
+.DS_Store
+*.pem
+npm-debug.log*
+.env*
+!.env.example
+next-env.d.ts
