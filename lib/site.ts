@@ -118,3 +118,20 @@ export const music = {
   artist: 'Boyce Avenue ft. Connie Talbot (acoustic cover)',
   baseVolume: 0.4,
 };
+
+// Creator / business identity for the WhatsApp enquiry CTA.
+// Single source of truth — change the name here and it updates everywhere.
+export const creator = {
+  brand: 'The Frames and Florals - Goa',
+  whatsappNumber: '919623704296', // digits only, for wa.me
+  whatsappDisplay: '+91 9623704296',
+  location: 'Goa, India',
+  tagline: 'Cinematic wedding websites, made personal.',
+};
+
+// Builds the click-to-chat link with a pre-filled enquiry, using the couple's
+// actual names from config above.
+export function whatsappEnquiryUrl(): string {
+  const message = `Hi ${creator.brand}! I just viewed the ${couple.groom} & ${couple.bride} wedding website and absolutely loved the experience. I'm interested in creating something similar for my wedding. Could you please share the pricing and process?`;
+  return `https://wa.me/${creator.whatsappNumber}?text=${encodeURIComponent(message)}`;
+}

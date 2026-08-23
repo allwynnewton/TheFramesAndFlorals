@@ -243,6 +243,70 @@ body {
   }
 }
 
+/* ---------- Floating creator CTA (bottom-left, opposite the music control) ---------- */
+.creator-cta {
+  position: fixed;
+  left: 1.4rem;
+  bottom: calc(1.4rem + env(safe-area-inset-bottom, 0px));
+  z-index: 70;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.62rem 1rem;
+  border-radius: 999px;
+  border: 1px solid rgba(199, 167, 106, 0.45);
+  background: rgba(25, 25, 25, 0.3);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: var(--ivory);
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  transition:
+    transform 0.4s var(--ease-cinematic),
+    border-color 0.4s var(--ease-cinematic),
+    background-color 0.4s var(--ease-cinematic);
+}
+.creator-cta:hover {
+  transform: scale(1.03);
+  border-color: rgba(199, 167, 106, 0.85);
+}
+.creator-cta:focus-visible {
+  outline: 2px solid var(--champagne);
+  outline-offset: 3px;
+}
+.creator-cta-heart {
+  color: var(--champagne);
+}
+/* Brand + enquiry revealed as a small tooltip on desktop hover — keeps the pill small */
+.creator-cta-tip {
+  position: absolute;
+  bottom: calc(100% + 10px);
+  left: 0;
+  max-width: 260px;
+  padding: 0.55rem 0.8rem;
+  border-radius: 10px;
+  background: rgba(12, 18, 14, 0.96);
+  border: 1px solid rgba(199, 167, 106, 0.25);
+  color: var(--ivory);
+  font-size: 0.62rem;
+  letter-spacing: 0.06em;
+  text-transform: none;
+  line-height: 1.5;
+  opacity: 0;
+  transform: translateY(6px);
+  pointer-events: none;
+  transition:
+    opacity 0.35s var(--ease-cinematic),
+    transform 0.35s var(--ease-cinematic);
+}
+.creator-cta:hover .creator-cta-tip,
+.creator-cta:focus-visible .creator-cta-tip {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 /* prevent flash of unstyled scroll while pinning is set up */
 .reveal-init {
   opacity: 0;

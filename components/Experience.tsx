@@ -27,6 +27,8 @@ import { useMusic } from '@/components/audio/MusicProvider';
 import EntryGate from '@/components/audio/EntryGate';
 import MusicToggle from '@/components/audio/MusicToggle';
 import VolumeAutomation from '@/components/audio/VolumeAutomation';
+import CreatorSection from '@/components/creator/CreatorSection';
+import CreatorCTA from '@/components/creator/CreatorCTA';
 
 export default function Experience() {
   const [loading, setLoading] = useState(true);
@@ -70,9 +72,11 @@ export default function Experience() {
         <RSVPSection />
         <FinalBlessing />
         <Footer />
+        <CreatorSection />
       </main>
 
       <MusicToggle />
+      <CreatorCTA />
       <VolumeAutomation />
     </>
   );
