@@ -4,9 +4,12 @@
 (`components/ChurchCinematicSection.tsx`). Scroll position sets `video.currentTime`
 via GSAP — the clip never autoplays or loops.
 
-The file currently here is your original upload, copied as-is. **For smooth
-scroll scrubbing you should re-encode it** with a short keyframe interval — a
-normal streaming encode has long GOPs, which makes `currentTime` seeking stutter.
+**This file has been re-encoded for smooth scroll scrubbing** — H.264, 24 fps,
+a keyframe every 8 frames (~⅓ s), audio stripped, `+faststart`, ~5.4 MB. The
+original upload had a keyframe only every ~2 s (5 total), which made `currentTime`
+seeking stutter; the optimized version has 30 keyframes so seeking is responsive.
+
+If you replace the clip with new footage, re-encode it the same way (below).
 
 ## Re-encode for responsive seeking (recommended)
 
