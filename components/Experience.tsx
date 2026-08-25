@@ -48,6 +48,30 @@ export default function Experience() {
     };
   }, [loading, hasEntered]);
 
+  // Self-healing layout: re-measure the scroll animations once heavy assets
+  // (images, fonts) have actually finished loading, so scrolling early can never
+  // leave the pinned sections mis-positioned ("broken") while things stream in.
+  useEffect(() => {
+    const refresh = () => ScrollTrigger.refresh();
+
+    if (document.readyState === 'complete') {
+      requestAnimationFrame(refresh);
+    } else {
+      window.addEventListener('load', refresh);
+    }
+    // fonts can shift text-anchored trigger positions once they swap in
+    document.fonts?.ready.then(refresh).catch(() => {});
+    // safety net for images/video that decode a beat later
+    const t1 = window.setTimeout(refresh, 1500);
+    const t2 = window.setTimeout(refresh, 4000);
+
+    return () => {
+      window.removeEventListener('load', refresh);
+      window.clearTimeout(t1);
+      window.clearTimeout(t2);
+    };
+  }, []);
+
   return (
     <>
       {loading && <WeddingLoader onDone={() => setLoading(false)} />}
