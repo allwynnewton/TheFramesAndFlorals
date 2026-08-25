@@ -49,7 +49,7 @@ export default function Footer() {
   return (
     <footer
       ref={root}
-      className="relative flex min-h-[80vh] flex-col items-center justify-center bg-charcoal px-6 py-32 text-center"
+      className="relative flex min-h-[80vh] flex-col items-center justify-center bg-blush px-6 py-32 text-center"
     >
       {/* a single point of warm light with a fine cross at its heart */}
       <div className="relative mb-16 flex h-24 w-24 items-center justify-center">
@@ -58,7 +58,7 @@ export default function Footer() {
           className="absolute inset-0 rounded-full"
           style={{
             background:
-              'radial-gradient(circle, rgba(246,240,231,0.9) 0%, rgba(199,167,106,0.5) 35%, transparent 70%)',
+              'radial-gradient(circle, rgba(217,139,152,0.5) 0%, rgba(194,160,99,0.32) 40%, transparent 72%)',
             filter: 'blur(6px)',
           }}
           aria-hidden
@@ -66,21 +66,21 @@ export default function Footer() {
         <span className="fineline-cross relative z-10" aria-hidden />
       </div>
 
-      <p data-foot className="font-display text-3xl tracking-wide text-ivory md:text-4xl">
+      <p data-foot className="font-display text-3xl tracking-wide text-ink md:text-4xl">
         {couple.groom.toUpperCase()} &amp; {couple.bride.toUpperCase()}
       </p>
-      <p data-foot className="eyebrow mt-5 text-champagne">
+      <p data-foot className="eyebrow mt-5 text-mauve">
         {wedding.dateShort}
       </p>
 
       {music.track && (
-        <p data-foot className="mt-10 text-[0.58rem] tracking-[0.2em] text-ivory/25">
+        <p data-foot className="mt-10 text-[0.58rem] tracking-[0.2em] text-ink/25">
           Music: {music.track}
           {music.artist ? ` — ${music.artist}` : ''}
         </p>
       )}
 
-      <p data-foot className="mt-6 text-[0.6rem] uppercase tracking-[0.3em] text-ivory/30">
+      <p data-foot className="mt-6 text-[0.6rem] uppercase tracking-[0.3em] text-ink/30">
         Made with love &amp; prayer
       </p>
     </footer>

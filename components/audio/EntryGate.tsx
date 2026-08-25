@@ -54,38 +54,38 @@ export default function EntryGate() {
       className="fixed inset-0 z-[90] flex flex-col items-center justify-center px-6 text-center"
       style={{
         background:
-          'linear-gradient(to bottom, rgba(25,25,25,0.72), rgba(25,25,25,0.5) 45%, rgba(25,25,25,0.78))',
+          'linear-gradient(to bottom, rgba(251,244,242,0.82), rgba(251,244,242,0.62) 45%, rgba(251,244,242,0.86))',
         backdropFilter: 'blur(2px)',
       }}
     >
-      <p data-gate-item className="eyebrow text-champagne">
+      <p data-gate-item className="eyebrow text-mauve">
         Enter the experience
       </p>
 
       <h2
         data-gate-item
-        className="font-display my-6 leading-none text-ivory"
+        className="font-display my-6 leading-none text-ink"
         style={{ fontSize: 'clamp(2.6rem, 8vw, 6rem)' }}
       >
         {couple.groom.toUpperCase()}
-        <span className="font-script mx-3 text-champagne" style={{ fontSize: '0.5em' }}>
+        <span className="font-script mx-3 text-mauve" style={{ fontSize: '0.5em' }}>
           &amp;
         </span>
         {couple.bride.toUpperCase()}
       </h2>
 
-      <p data-gate-item className="font-serif-e text-lg text-ivory/75 md:text-xl">
+      <p data-gate-item className="font-serif-e text-lg text-ink/75 md:text-xl">
         invite you to experience their story
       </p>
 
       <div data-gate-item className="mt-12 flex flex-col items-center gap-5">
-        <button type="button" onClick={() => choose(true)} className="btn-ghost text-ivory">
+        <button type="button" onClick={() => choose(true)} className="btn-ghost text-ink">
           Enter with music ♪
         </button>
         <button
           type="button"
           onClick={() => choose(false)}
-          className="text-xs uppercase tracking-[0.28em] text-ivory/50 underline-offset-8 transition-colors hover:text-ivory/80 hover:underline"
+          className="text-xs uppercase tracking-[0.28em] text-ink/50 underline-offset-8 transition-colors hover:text-ink/80 hover:underline"
         >
           Enter quietly
         </button>

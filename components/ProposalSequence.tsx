@@ -56,14 +56,14 @@ export default function ProposalSequence() {
   const captions = proposal.captions;
 
   return (
-    <section ref={root} className="relative overflow-hidden bg-forest text-ivory">
+    <section ref={root} className="relative overflow-hidden bg-mist text-ink">
       <div className="relative flex min-h-[100svh] flex-col justify-center py-24 md:h-[100svh] md:py-0">
         {/* heading */}
         <div className="pointer-events-none absolute inset-0 z-20 flex items-center justify-center">
-          <h2 data-then className="display-lg text-ivory/90">
+          <h2 data-then className="display-lg text-ink/90">
             AND THEN&hellip;
           </h2>
-          <h2 data-yes className="display-lg absolute text-champagne">
+          <h2 data-yes className="display-lg absolute text-mauve">
             SHE SAID YES.
           </h2>
         </div>
@@ -88,7 +88,7 @@ export default function ProposalSequence() {
                 sizes="(max-width: 768px) 90vw, 46vw"
               />
               {captions[i] && (
-                <figcaption className="mt-4 font-serif-e text-lg text-ivory/70">
+                <figcaption className="mt-4 font-serif-e text-lg text-ink/70">
                   {captions[i]}
                 </figcaption>
               )}

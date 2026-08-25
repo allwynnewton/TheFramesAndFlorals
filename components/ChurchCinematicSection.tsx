@@ -19,9 +19,9 @@ import { couple, wedding } from '@/lib/site';
  * identity + "View Location" so there is no duplicate church information.
  */
 
-// A warm dark poster so the section is never a blank white frame pre-load.
+// A soft warm poster so the section is never a blank frame pre-load.
 const POSTER =
-  "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='18'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%231d2c24'/%3E%3Cstop offset='0.6' stop-color='%2317231d'/%3E%3Cstop offset='1' stop-color='%230b120e'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='18' fill='url(%23g)'/%3E%3C/svg%3E";
+  "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='18'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%23f4ede3'/%3E%3Cstop offset='0.6' stop-color='%23e6d8c8'/%3E%3Cstop offset='1' stop-color='%23d8c6b8'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='18' fill='url(%23g)'/%3E%3C/svg%3E";
 
 export default function ChurchCinematicSection() {
   const root = useRef<HTMLElement>(null);
@@ -33,6 +33,16 @@ export default function ChurchCinematicSection() {
       const v = video.current;
       const q = gsap.utils.selector(root);
       let mm: ReturnType<typeof gsap.matchMedia> | null = null;
+
+      // Hide the stage overlays immediately, before the (video-metadata-gated)
+      // timeline builds — on mobile, video preload can lag, and without this the
+      // overlays would briefly render stacked on top of each other.
+      gsap.set(
+        q(
+          '[data-sacrament],[data-gratitude],[data-groom],[data-amp],[data-bride],[data-date],[data-church],[data-wash]',
+        ),
+        { autoAlpha: 0 },
+      );
 
       // proxy the scrub target so we NEVER touch React state per frame
       const proxy = { time: 0 };
@@ -178,6 +188,12 @@ export default function ChurchCinematicSection() {
         onMeta();
       } else {
         v?.addEventListener('loadedmetadata', onMeta, { once: true });
+        // Nudge mobile browsers (which often defer video) to fetch metadata.
+        try {
+          v?.load();
+        } catch {
+          /* ignore */
+        }
       }
 
       return () => {
@@ -189,10 +205,10 @@ export default function ChurchCinematicSection() {
   );
 
   return (
-    <section ref={root} className="church-cinematic relative bg-forest" data-music-vol="0.48">
+    <section ref={root} className="church-cinematic relative bg-mist" data-music-vol="0.48">
       <div
         ref={sticky}
-        className="church-cinematic-sticky relative h-[100svh] w-full overflow-hidden bg-forest"
+        className="church-cinematic-sticky relative h-[100svh] w-full overflow-hidden bg-mist"
       >
         {/* ---- The church film ---- */}
         <video
@@ -214,7 +230,7 @@ export default function ChurchCinematicSection() {
           className="cinematic-overlay pointer-events-none absolute inset-0"
           style={{
             background:
-              'linear-gradient(to bottom, rgba(0,0,0,0.20), rgba(0,0,0,0.05) 45%, rgba(0,0,0,0.28))',
+              'linear-gradient(to bottom, rgba(0,0,0,0.38), rgba(0,0,0,0.18) 45%, rgba(0,0,0,0.48))',
           }}
         />
         {/* ---- Subtle vignette ---- */}
@@ -240,7 +256,7 @@ export default function ChurchCinematicSection() {
           className="pointer-events-none absolute inset-0"
           style={{
             background:
-              'radial-gradient(130% 110% at 50% 100%, #f6f0e7 0%, #f6f0e7 58%, rgba(246,240,231,0.85) 100%)',
+              'radial-gradient(130% 110% at 50% 100%, #fbf4f2 0%, #fbf4f2 58%, rgba(251,244,242,0.85) 100%)',
           }}
           aria-hidden
         />
@@ -283,7 +299,7 @@ export default function ChurchCinematicSection() {
               >
                 {couple.groom}
               </h2>
-              <span data-amp className="font-script my-1 text-champagne" style={{ fontSize: 'clamp(2rem,5vw,4rem)' }}>
+              <span data-amp className="font-script my-1 text-rose" style={{ fontSize: 'clamp(2rem,5vw,4rem)' }}>
                 &amp;
               </span>
               <h2
@@ -296,7 +312,7 @@ export default function ChurchCinematicSection() {
             </div>
 
             <div data-date className="mt-10 flex flex-col items-center gap-3">
-              <p className="font-display tracking-wide text-champagne" style={{ fontSize: 'clamp(1.6rem,4vw,3rem)' }}>
+              <p className="font-display tracking-wide text-rose" style={{ fontSize: 'clamp(1.6rem,4vw,3rem)' }}>
                 {wedding.dateLabel}
               </p>
               <p className="eyebrow text-ivory/80">
@@ -319,7 +335,7 @@ export default function ChurchCinematicSection() {
             </h2>
             <span
               data-goldline
-              className="mt-5 block h-px w-24 bg-gradient-to-r from-transparent via-champagne to-transparent"
+              className="mt-5 block h-px w-24 bg-gradient-to-r from-transparent via-rose to-transparent"
             />
             <p className="mt-5 eyebrow text-ivory/75">{wedding.ceremony.place}</p>
             <a
@@ -343,7 +359,7 @@ export default function ChurchCinematicSection() {
           <h2 className="font-display uppercase leading-[0.9]" style={{ fontSize: 'clamp(3rem, 9vw, 6rem)' }}>
             {couple.groom} &amp; {couple.bride}
           </h2>
-          <p className="font-display text-champagne" style={{ fontSize: 'clamp(1.4rem,4vw,2.4rem)' }}>
+          <p className="font-display text-rose" style={{ fontSize: 'clamp(1.4rem,4vw,2.4rem)' }}>
             {wedding.dateLabel}
           </p>
           <p className="eyebrow text-ivory/80">
@@ -353,7 +369,7 @@ export default function ChurchCinematicSection() {
             <h3 className="font-display" style={{ fontSize: 'clamp(1.8rem,5vw,3rem)' }}>
               {wedding.ceremony.venue}
             </h3>
-            <span data-goldline className="block h-px w-24 bg-gradient-to-r from-transparent via-champagne to-transparent" />
+            <span data-goldline className="block h-px w-24 bg-gradient-to-r from-transparent via-rose to-transparent" />
             <p className="eyebrow text-ivory/75">{wedding.ceremony.place}</p>
             <a
               href={wedding.ceremony.mapUrl}

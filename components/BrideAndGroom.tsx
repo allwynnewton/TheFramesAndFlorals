@@ -75,7 +75,7 @@ export default function BrideAndGroom() {
   ];
 
   return (
-    <section ref={root} className="grid grid-cols-1 bg-charcoal md:grid-cols-2">
+    <section ref={root} className="grid grid-cols-1 overflow-hidden bg-blush md:grid-cols-2">
       {people.map((p) => (
         <div
           key={p.name}
@@ -93,9 +93,9 @@ export default function BrideAndGroom() {
               sizes="(max-width: 768px) 100vw, 50vw"
             />
           </div>
-          <div className="absolute inset-0 bg-gradient-to-t from-charcoal/85 via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-ink/85 via-transparent to-transparent" />
           <div className="relative z-10 p-10 text-center md:p-16">
-            <p data-bg-name className="font-script text-5xl text-champagne md:text-6xl">
+            <p data-bg-name className="font-script text-5xl text-rose md:text-6xl">
               {p.name}
             </p>
             <p data-bg-name className="eyebrow mt-3 text-ivory/70">

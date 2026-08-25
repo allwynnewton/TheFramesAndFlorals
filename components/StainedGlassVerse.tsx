@@ -6,10 +6,10 @@ import { scriptures } from '@/lib/site';
 
 // low-opacity translucent panes — amber, wine, rose, deep blue
 const panes = [
-  { c: 'rgba(199,167,106,0.30)', x: '8%', y: '12%', w: '32%', h: '46%', r: -8 },
-  { c: 'rgba(90,38,52,0.22)', x: '58%', y: '6%', w: '30%', h: '40%', r: 6 },
-  { c: 'rgba(190,120,120,0.20)', x: '20%', y: '52%', w: '34%', h: '42%', r: 10 },
-  { c: 'rgba(60,80,120,0.20)', x: '60%', y: '50%', w: '30%', h: '44%', r: -6 },
+  { c: 'rgba(217,139,152,0.28)', x: '8%', y: '12%', w: '32%', h: '46%', r: -8 }, // rose
+  { c: 'rgba(194,160,99,0.24)', x: '58%', y: '6%', w: '30%', h: '40%', r: 6 }, // gold
+  { c: 'rgba(156,107,120,0.22)', x: '20%', y: '52%', w: '34%', h: '42%', r: 10 }, // mauve
+  { c: 'rgba(147,165,131,0.22)', x: '60%', y: '50%', w: '30%', h: '44%', r: -6 }, // sage
 ];
 
 export default function StainedGlassVerse() {
@@ -66,7 +66,7 @@ export default function StainedGlassVerse() {
   return (
     <section
       ref={root}
-      className="relative flex min-h-screen items-center justify-center overflow-hidden bg-ivory px-6 py-40 text-charcoal"
+      className="relative flex min-h-screen items-center justify-center overflow-hidden bg-blush px-6 py-40 text-ink"
     >
       {/* translucent coloured panes */}
       <div className="pointer-events-none absolute inset-0" aria-hidden>
@@ -90,10 +90,10 @@ export default function StainedGlassVerse() {
       </div>
 
       <div className="relative z-10 text-center">
-        <p data-glass-verse className="font-display text-4xl leading-tight text-charcoal md:text-7xl">
+        <p data-glass-verse className="font-display text-4xl leading-tight text-ink md:text-7xl">
           &ldquo;{scriptures.ruth.line}&rdquo;
         </p>
-        <p data-glass-verse className="eyebrow mt-10 text-champagne">
+        <p data-glass-verse className="eyebrow mt-10 text-mauve">
           {scriptures.ruth.ref}
         </p>
       </div>

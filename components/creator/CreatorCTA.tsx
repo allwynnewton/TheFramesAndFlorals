@@ -26,7 +26,7 @@ export default function CreatorCTA() {
     >
       <span className="creator-cta-tip" aria-hidden>
         {creator.brand}
-        <span className="mt-1 block text-champagne">Enquire on WhatsApp →</span>
+        <span className="mt-1 block text-mauve">Enquire on WhatsApp →</span>
       </span>
       <span className="creator-cta-heart" aria-hidden>
         ♡

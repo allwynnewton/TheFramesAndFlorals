@@ -56,30 +56,30 @@ export default function WeddingDate() {
   return (
     <section
       ref={root}
-      className="relative flex h-[100svh] items-center justify-center overflow-hidden bg-charcoal text-ivory"
+      className="relative flex h-[100svh] items-center justify-center overflow-hidden bg-blush text-ink"
     >
       {/* stacked words */}
       <div className="absolute inset-0 flex flex-col items-center justify-center">
-        <span data-d28 className="display-xl leading-none text-ivory">
+        <span data-d28 className="display-xl leading-none text-ink">
           28
         </span>
         <span
           data-dmonth
-          className="font-display text-[12vw] uppercase tracking-[0.1em] text-champagne md:text-[7vw]"
+          className="font-display text-[12vw] uppercase tracking-[0.1em] text-mauve md:text-[7vw]"
         >
           December
         </span>
-        <span data-d2026 className="display-xl leading-none text-ivory">
+        <span data-d2026 className="display-xl leading-none text-ink">
           2026
         </span>
       </div>
 
       {/* resolved compact date */}
       <div className="absolute inset-0 flex flex-col items-center justify-center gap-6">
-        <span data-combined className="display-lg text-champagne">
+        <span data-combined className="display-lg text-mauve">
           {wedding.dateShort}
         </span>
-        <div data-daytime className="flex items-center gap-6 text-ivory/80">
+        <div data-daytime className="flex items-center gap-6 text-ink/80">
           <span className="eyebrow">{wedding.day}</span>
           <span className="h-4 w-px bg-champagne/60" />
           <span className="eyebrow">{wedding.time}</span>

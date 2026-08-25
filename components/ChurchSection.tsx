@@ -53,7 +53,7 @@ export default function ChurchSection() {
   );
 
   return (
-    <section ref={root} className="relative h-[110vh] overflow-hidden bg-charcoal">
+    <section ref={root} className="relative h-[110vh] overflow-hidden bg-blush">
       <div data-church-img className="absolute inset-0">
         <Photo
           src={undefined}
@@ -65,10 +65,10 @@ export default function ChurchSection() {
           sizes="100vw"
         />
       </div>
-      <div className="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/30 to-charcoal/60" />
+      <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/30 to-ink/60" />
 
       <div className="absolute inset-0 flex flex-col items-center justify-center px-6 text-center text-ivory">
-        <p data-church-copy className="eyebrow text-champagne">
+        <p data-church-copy className="eyebrow text-rose">
           {wedding.ceremony.title}
         </p>
         <h2 data-church-copy className="display-md mt-6 text-ivory">

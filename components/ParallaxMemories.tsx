@@ -60,7 +60,7 @@ export default function ParallaxMemories() {
   );
 
   return (
-    <section ref={root} className="bg-charcoal">
+    <section ref={root} className="bg-blush">
       {parallaxMoments.map((m, i) => (
         <div
           key={i}
@@ -79,7 +79,7 @@ export default function ParallaxMemories() {
               sizes="100vw"
             />
           </div>
-          <div className="absolute inset-0 bg-charcoal/25" />
+          <div className="absolute inset-0 bg-gradient-to-t from-ink/65 via-ink/30 to-ink/25" />
           <div className="absolute inset-0 flex items-end justify-center pb-24 md:items-center md:pb-0">
             <p
               data-par-cap

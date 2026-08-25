@@ -52,10 +52,10 @@ export default function MemoryGallery() {
   );
 
   return (
-    <section ref={root} className="bg-ivory px-6 py-32 text-charcoal md:py-48">
+    <section ref={root} className="bg-blush px-6 py-32 text-ink md:py-48">
       <Reveal className="mb-20 text-center">
-        <p className="eyebrow text-champagne">A few of our favourites</p>
-        <h2 className="display-lg mt-6 text-charcoal">OUR MEMORIES</h2>
+        <p className="eyebrow text-mauve">A few of our favourites</p>
+        <h2 className="display-lg mt-6 text-ink">OUR MEMORIES</h2>
       </Reveal>
 
       <div className="mx-auto grid max-w-6xl grid-cols-1 gap-6 md:grid-cols-12 md:auto-rows-[16vw] md:gap-8">
@@ -64,7 +64,7 @@ export default function MemoryGallery() {
             key={i}
             data-tile
             data-rot={it.rot}
-            className={`${it.span} ${it.ar} md:aspect-auto shadow-[0_30px_70px_-40px_rgba(25,25,25,0.6)]`}
+            className={`${it.span} ${it.ar} md:aspect-auto shadow-[0_30px_70px_-40px_rgba(120,100,105,0.35)]`}
           >
             <Photo
               src={undefined}

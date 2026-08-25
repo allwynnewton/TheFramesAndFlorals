@@ -7,7 +7,7 @@ import { couple } from '@/lib/site';
 type Status = 'idle' | 'accept' | 'decline';
 
 const fieldClass =
-  'w-full border-0 border-b border-ivory/25 bg-transparent py-3 font-serif-e text-lg text-ivory placeholder-ivory/40 outline-none transition-colors focus:border-champagne';
+  'w-full border-0 border-b border-ink/25 bg-transparent py-3 font-serif-e text-lg text-ink placeholder-ink/40 outline-none transition-colors focus:border-mauve';
 
 export default function RSVPSection() {
   const [status, setStatus] = useState<Status>('idle');
@@ -22,11 +22,11 @@ export default function RSVPSection() {
   }
 
   return (
-    <section className="relative flex min-h-screen items-center justify-center bg-forest px-6 py-32 text-ivory" data-music-vol="0.3">
+    <section className="relative flex min-h-screen items-center justify-center bg-mist px-6 py-32 text-ink" data-music-vol="0.3">
       <div className="w-full max-w-2xl">
         <Reveal className="text-center">
-          <p className="eyebrow text-champagne">Kindly respond by 1 December 2026</p>
-          <h2 className="display-lg mt-6 text-ivory">
+          <p className="eyebrow text-mauve">Kindly respond by 1 December 2026</p>
+          <h2 className="display-lg mt-6 text-ink">
             WILL YOU
             <br />
             JOIN US?
@@ -36,12 +36,12 @@ export default function RSVPSection() {
         {status !== 'idle' ? (
           <Reveal className="mt-16 text-center">
             <span className="fineline-cross mx-auto mb-8" aria-hidden />
-            <p className="font-display text-3xl text-champagne md:text-4xl">
+            <p className="font-display text-3xl text-mauve md:text-4xl">
               {decision === 'accept'
                 ? 'With all our hearts, thank you.'
                 : 'You will be dearly missed.'}
             </p>
-            <p className="mt-4 font-serif-e text-lg text-ivory/70">
+            <p className="mt-4 font-serif-e text-lg text-ink/70">
               {decision === 'accept'
                 ? `${couple.groom} & ${couple.bride} can’t wait to celebrate with you.`
                 : 'Thank you for letting us know — you’ll be in our prayers.'}
@@ -52,11 +52,11 @@ export default function RSVPSection() {
             <form className="mt-16 space-y-10" onSubmit={(e) => handleSubmit(e, 'accept')}>
               <div className="grid grid-cols-1 gap-10 md:grid-cols-2">
                 <label className="block">
-                  <span className="eyebrow text-ivory/60">Name</span>
+                  <span className="eyebrow text-ink/60">Name</span>
                   <input required name="name" className={fieldClass} placeholder="Your full name" />
                 </label>
                 <label className="block">
-                  <span className="eyebrow text-ivory/60">Number of guests</span>
+                  <span className="eyebrow text-ink/60">Number of guests</span>
                   <input
                     type="number"
                     min={1}
@@ -70,28 +70,28 @@ export default function RSVPSection() {
 
               <div className="grid grid-cols-1 gap-10 md:grid-cols-2">
                 <label className="block">
-                  <span className="eyebrow text-ivory/60">Attending Ceremony?</span>
+                  <span className="eyebrow text-ink/60">Attending Ceremony?</span>
                   <select name="ceremony" className={`${fieldClass} appearance-none`}>
-                    <option className="bg-forest">Yes, joyfully</option>
-                    <option className="bg-forest">Unable to</option>
+                    <option className="bg-mist">Yes, joyfully</option>
+                    <option className="bg-mist">Unable to</option>
                   </select>
                 </label>
                 <label className="block">
-                  <span className="eyebrow text-ivory/60">Attending Reception?</span>
+                  <span className="eyebrow text-ink/60">Attending Reception?</span>
                   <select name="reception" className={`${fieldClass} appearance-none`}>
-                    <option className="bg-forest">Yes, joyfully</option>
-                    <option className="bg-forest">Unable to</option>
+                    <option className="bg-mist">Yes, joyfully</option>
+                    <option className="bg-mist">Unable to</option>
                   </select>
                 </label>
               </div>
 
               <label className="block">
-                <span className="eyebrow text-ivory/60">Dietary notes</span>
+                <span className="eyebrow text-ink/60">Dietary notes</span>
                 <input name="dietary" className={fieldClass} placeholder="Anything we should know" />
               </label>
 
               <div className="flex flex-col items-center gap-6 pt-6 sm:flex-row sm:justify-center">
-                <button type="submit" className="btn-ghost text-ivory">
+                <button type="submit" className="btn-ghost text-ink">
                   Joyfully Accept
                 </button>
                 <button
@@ -103,7 +103,7 @@ export default function RSVPSection() {
                       'decline',
                     );
                   }}
-                  className="text-xs uppercase tracking-[0.28em] text-ivory/50 underline-offset-8 transition-colors hover:text-ivory/80 hover:underline"
+                  className="text-xs uppercase tracking-[0.28em] text-ink/50 underline-offset-8 transition-colors hover:text-ink/80 hover:underline"
                 >
                   Regretfully Decline
                 </button>

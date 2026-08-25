@@ -18,8 +18,8 @@ export default function OpengraphImage() {
           alignItems: 'center',
           justifyContent: 'center',
           background:
-            'linear-gradient(135deg, #1d2c24 0%, #17231d 55%, #0c130f 100%)',
-          color: '#F6F0E7',
+            'linear-gradient(135deg, #fbf4f2 0%, #f7e4e7 55%, #eef2e9 100%)',
+          color: '#4a403c',
           fontFamily: 'serif',
         }}
       >
@@ -28,7 +28,7 @@ export default function OpengraphImage() {
             fontSize: 26,
             letterSpacing: 14,
             textTransform: 'uppercase',
-            color: '#C7A76A',
+            color: '#9c6b78',
           }}
         >
           Together with their families
@@ -38,13 +38,13 @@ export default function OpengraphImage() {
           <span style={{ fontSize: 128, letterSpacing: 8 }}>
             {couple.groom.toUpperCase()}
           </span>
-          <span style={{ fontSize: 76, color: '#C7A76A', margin: '0 34px' }}>&</span>
+          <span style={{ fontSize: 76, color: '#d98b98', margin: '0 34px' }}>&</span>
           <span style={{ fontSize: 128, letterSpacing: 8 }}>
             {couple.bride.toUpperCase()}
           </span>
         </div>
 
-        <div style={{ width: 140, height: 2, background: '#C7A76A', margin: '38px 0' }} />
+        <div style={{ width: 140, height: 2, background: '#d98b98', margin: '38px 0' }} />
 
         <div style={{ fontSize: 42, letterSpacing: 12 }}>{wedding.dateLabel}</div>
         <div
@@ -52,7 +52,7 @@ export default function OpengraphImage() {
             fontSize: 24,
             letterSpacing: 8,
             textTransform: 'uppercase',
-            color: 'rgba(246,240,231,0.7)',
+            color: 'rgba(74,64,60,0.65)',
             marginTop: 16,
           }}
         >
@@ -64,7 +64,7 @@ export default function OpengraphImage() {
             fontSize: 18,
             letterSpacing: 6,
             textTransform: 'uppercase',
-            color: 'rgba(199,167,106,0.85)',
+            color: '#9c6b78',
             marginTop: 64,
           }}
         >

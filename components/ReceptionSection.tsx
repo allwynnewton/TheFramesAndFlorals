@@ -52,7 +52,7 @@ export default function ReceptionSection() {
   const bokeh = Array.from({ length: 14 });
 
   return (
-    <section ref={root} className="relative min-h-screen overflow-hidden bg-forest text-ivory">
+    <section ref={root} className="relative min-h-screen overflow-hidden bg-mist text-ivory">
       <Photo
         src={undefined}
         alt="Warm celebration lights at the reception"
@@ -61,7 +61,7 @@ export default function ReceptionSection() {
         style={{ position: 'absolute', inset: 0 }}
         sizes="100vw"
       />
-      <div className="absolute inset-0 bg-forest/70" />
+      <div className="absolute inset-0 bg-ink/70" />
 
       {/* distant warm bokeh */}
       <div className="pointer-events-none absolute inset-0" aria-hidden>
@@ -90,7 +90,7 @@ export default function ReceptionSection() {
         </h2>
 
         <div data-rc className="mt-14 flex flex-col items-center gap-2">
-          <p className="font-display text-3xl text-champagne md:text-4xl">
+          <p className="font-display text-3xl text-rose md:text-4xl">
             {wedding.reception.venue}
           </p>
           <p className="font-serif-e text-lg text-ivory/80">

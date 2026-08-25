@@ -8,9 +8,20 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        // ---- Light "white & pink florals" palette ----
+        blush: '#FBF4F2', // base warm white-pink (page background)
+        porcelain: '#FFFFFF',
+        petal: '#F7E4E7', // soft pink tint background
+        mist: '#EEF2E9', // soft sage-tinted background
+        rose: '#D98B98', // dusty-rose accent
+        mauve: '#9C6B78', // deeper rose for emphasis
+        sage: '#93A583', // greenery accent
+        champagne: '#C2A063', // muted gold accent
+        ink: '#4A403C', // primary text (warm taupe-charcoal)
+        inksoft: '#6C635F', // muted taupe secondary text
+        // ---- legacy tokens (kept so nothing errors; being phased out) ----
         ivory: '#F6F0E7',
         cream: '#E8DDCE',
-        champagne: '#C7A76A',
         forest: '#17231D',
         charcoal: '#191919',
         wine: '#5A2634',

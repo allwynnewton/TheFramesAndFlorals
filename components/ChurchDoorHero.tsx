@@ -137,10 +137,10 @@ export default function ChurchDoorHero() {
   );
 
   return (
-    <section ref={root} className="relative bg-charcoal" aria-label="Welcome">
+    <section ref={root} className="relative bg-blush" aria-label="Welcome">
       <div
         ref={stage}
-        className="relative h-[100svh] w-full overflow-hidden bg-charcoal"
+        className="relative h-[100svh] w-full overflow-hidden bg-blush"
         style={{ transformStyle: 'preserve-3d' }}
       >
         {/* ---- Warm light behind the doors (revealed as they open) ---- */}
@@ -149,7 +149,7 @@ export default function ChurchDoorHero() {
           className="pointer-events-none absolute inset-0"
           style={{
             background:
-              'radial-gradient(38% 46% at 50% 46%, rgba(246,240,231,0.95) 0%, rgba(216,194,149,0.55) 30%, rgba(199,167,106,0.18) 55%, transparent 72%)',
+              'radial-gradient(40% 48% at 50% 46%, rgba(255,253,251,0.98) 0%, rgba(247,228,231,0.6) 32%, rgba(217,139,152,0.14) 56%, transparent 74%)',
             filter: 'blur(6px)',
           }}
         />
@@ -159,7 +159,7 @@ export default function ChurchDoorHero() {
           className="pointer-events-none absolute left-1/2 top-[-10%] h-[120%] w-[46%] -translate-x-1/2 origin-top"
           style={{
             background:
-              'linear-gradient(180deg, rgba(246,240,231,0.5) 0%, rgba(216,194,149,0.22) 40%, transparent 85%)',
+              'linear-gradient(180deg, rgba(255,253,251,0.6) 0%, rgba(247,228,231,0.28) 40%, transparent 85%)',
             filter: 'blur(26px)',
           }}
         />
@@ -169,7 +169,7 @@ export default function ChurchDoorHero() {
           <div
             data-couple
             className="relative h-[74%] w-[62%] max-w-[560px] overflow-hidden rounded-[2px]"
-            style={{ boxShadow: '0 40px 120px -30px rgba(0,0,0,0.8)' }}
+            style={{ boxShadow: '0 40px 110px -34px rgba(120,95,100,0.4)' }}
           >
             <Photo
               src={undefined}
@@ -180,7 +180,7 @@ export default function ChurchDoorHero() {
               seed={7}
               style={{ position: 'absolute', inset: 0 }}
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-charcoal/40 via-transparent to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-blush/40 via-transparent to-transparent" />
           </div>
         </div>
 
@@ -195,7 +195,7 @@ export default function ChurchDoorHero() {
           <path
             d="M18 100 L18 40 Q18 12 50 8 Q82 12 82 40 L82 100"
             fill="none"
-            stroke="rgba(199,167,106,0.22)"
+            stroke="rgba(217,139,152,0.30)"
             strokeWidth="0.4"
             vectorEffect="non-scaling-stroke"
           />
@@ -215,21 +215,21 @@ export default function ChurchDoorHero() {
         <div
           data-vignette
           className="pointer-events-none absolute inset-0"
-          style={{ boxShadow: 'inset 0 0 260px 90px rgba(0,0,0,0.9)', opacity: 0.85 }}
+          style={{ boxShadow: 'inset 0 0 220px 80px rgba(150,128,132,0.28)', opacity: 0.6 }}
         />
 
         {/* ---- Names + text overlays ---- */}
         <div className="pointer-events-none absolute inset-0 flex flex-col items-center justify-center px-6 text-center">
-          <p data-above className="eyebrow text-ivory/75">
+          <p data-above className="eyebrow text-ink/75">
             Together with their families
           </p>
 
           <div data-names className="my-4">
-            <h1 className="display-xl text-ivory">
+            <h1 className="display-xl text-ink">
               <span data-name-line className="block">
                 {couple.groom.toUpperCase()}
               </span>
-              <span data-name-line className="block font-script text-champagne text-[0.42em] leading-none my-1">
+              <span data-name-line className="block font-script text-mauve text-[0.42em] leading-none my-1">
                 &amp;
               </span>
               <span data-name-line className="block">
@@ -238,17 +238,17 @@ export default function ChurchDoorHero() {
             </h1>
           </div>
 
-          <p data-below className="eyebrow text-ivory/75">
+          <p data-below className="eyebrow text-ink/75">
             invite you to celebrate their wedding
           </p>
 
           {/* Announcement overlaps, revealed last */}
           <div data-announce className="absolute bottom-[10%] flex flex-col items-center gap-3">
-            <p className="eyebrow text-champagne">We&apos;re getting married</p>
-            <p className="font-display text-2xl md:text-4xl text-ivory tracking-wide">
+            <p className="eyebrow text-mauve">We&apos;re getting married</p>
+            <p className="font-display text-2xl md:text-4xl text-ink tracking-wide">
               {wedding.dateLabel}
             </p>
-            <p className="eyebrow text-ivory/70">{wedding.city}</p>
+            <p className="eyebrow text-ink/70">{wedding.city}</p>
           </div>
         </div>
 
@@ -257,8 +257,8 @@ export default function ChurchDoorHero() {
           data-cue
           className="absolute bottom-10 left-1/2 flex -translate-x-1/2 flex-col items-center gap-3"
         >
-          <span className="eyebrow text-ivory/70">Scroll to enter</span>
-          <span className="block h-10 w-px bg-gradient-to-b from-champagne/80 to-transparent" />
+          <span className="eyebrow text-ink/70">Scroll to enter</span>
+          <span className="block h-10 w-px bg-gradient-to-b from-rose/80 to-transparent" />
         </div>
       </div>
     </section>
@@ -266,18 +266,18 @@ export default function ChurchDoorHero() {
 }
 
 function DoorFace({ side }: { side: 'left' | 'right' }) {
-  // A heavy, dark carved timber door. Panels rendered as thin inset lines.
+  // A pale, carved timber door. Panels rendered as thin inset lines.
   const edge = side === 'left' ? 'right' : 'left';
   return (
     <div
       className="relative h-full w-full"
       style={{
         background:
-          'linear-gradient(100deg, #14100c 0%, #241a12 45%, #171009 100%)',
+          'linear-gradient(100deg, #efe7dd 0%, #e6d8c8 45%, #f4ede3 100%)',
         boxShadow:
           side === 'left'
-            ? 'inset -30px 0 60px -20px rgba(0,0,0,0.9)'
-            : 'inset 30px 0 60px -20px rgba(0,0,0,0.9)',
+            ? 'inset -30px 0 60px -20px rgba(150,128,118,0.4)'
+            : 'inset 30px 0 60px -20px rgba(150,128,118,0.4)',
         backfaceVisibility: 'hidden',
       }}
     >
@@ -288,17 +288,17 @@ function DoorFace({ side }: { side: 'left' | 'right' }) {
             key={i}
             className="flex-1 rounded-[3px]"
             style={{
-              border: '1px solid rgba(199,167,106,0.10)',
-              boxShadow: 'inset 0 0 30px rgba(0,0,0,0.6)',
+              border: '1px solid rgba(156,107,120,0.18)',
+              boxShadow: 'inset 0 0 30px rgba(150,128,124,0.22)',
               background:
-                'linear-gradient(180deg, rgba(199,167,106,0.05), transparent)',
+                'linear-gradient(180deg, rgba(217,139,152,0.07), transparent)',
             }}
           />
         ))}
       </div>
-      {/* iron handle near the centre seam */}
+      {/* handle near the centre seam */}
       <div
-        className="absolute top-1/2 h-16 w-[3px] -translate-y-1/2 rounded bg-champagne/30"
+        className="absolute top-1/2 h-16 w-[3px] -translate-y-1/2 rounded bg-mauve/40"
         style={{ [edge]: '10px' } as React.CSSProperties}
       />
     </div>

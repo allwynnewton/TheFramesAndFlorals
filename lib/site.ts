@@ -123,8 +123,8 @@ export const music = {
 // Single source of truth — change the name here and it updates everywhere.
 export const creator = {
   brand: 'The Frames and Florals - Goa',
-  whatsappNumber: '919623704296', // digits only, for wa.me
-  whatsappDisplay: '+91 9623704296',
+  whatsappNumber: '917020727961', // digits only, for wa.me
+  whatsappDisplay: '+91 7020727961',
   location: 'Goa, India',
   tagline: 'Cinematic wedding websites, made personal.',
 };

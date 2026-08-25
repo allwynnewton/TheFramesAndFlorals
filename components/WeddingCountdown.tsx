@@ -39,12 +39,12 @@ function Unit({ value, label }: { value: number; label: string }) {
       <span className="overflow-hidden leading-none">
         <span
           ref={ref}
-          className="block font-display text-[18vw] leading-none text-ivory md:text-[9vw]"
+          className="block font-display text-[18vw] leading-none text-ink md:text-[9vw]"
         >
           {String(value).padStart(2, '0')}
         </span>
       </span>
-      <span className="eyebrow mt-4 text-champagne">{label}</span>
+      <span className="eyebrow mt-4 text-mauve">{label}</span>
     </div>
   );
 }
@@ -61,9 +61,9 @@ export default function WeddingCountdown() {
   }, []);
 
   return (
-    <section className="flex min-h-[90vh] flex-col items-center justify-center bg-charcoal px-6 py-32 text-center">
+    <section className="flex min-h-[90vh] flex-col items-center justify-center bg-blush px-6 py-32 text-center">
       <Reveal>
-        <p className="eyebrow text-champagne">Until Forever</p>
+        <p className="eyebrow text-mauve">Until Forever</p>
       </Reveal>
       <Reveal delay={0.1} className="mt-14 w-full max-w-5xl">
         <div className="grid grid-cols-2 gap-x-10 gap-y-14 md:grid-cols-4 md:gap-x-6">

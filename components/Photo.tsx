@@ -18,13 +18,15 @@ import { CSSProperties } from 'react';
 
 type Tone = 'forest' | 'wine' | 'champagne' | 'charcoal' | 'ivory' | 'cream';
 
+// Light, airy floral placeholder tints (soft blush, rose, sage, cream).
+// Tone names are kept for compatibility with the sections that pass them.
 const TONES: Record<Tone, [string, string, string]> = {
-  forest: ['#1d2c24', '#17231d', '#0c130f'],
-  wine: ['#6d3040', '#5a2634', '#2c1119'],
-  champagne: ['#d8bd86', '#c7a76a', '#8a7241'],
-  charcoal: ['#2a2a2a', '#191919', '#0b0b0b'],
-  ivory: ['#faf6ef', '#f6f0e7', '#e6dccb'],
-  cream: ['#efe6d7', '#e8ddce', '#d3c4ab'],
+  forest: ['#EEF2E8', '#D6E0C9', '#B7C6A6'], // soft sage greenery
+  wine: ['#FAE7EA', '#EBB9C1', '#D69AA4'], // dusty rose / blush
+  champagne: ['#F7EFDD', '#E7D3AA', '#D0B583'], // soft warm gold
+  charcoal: ['#F1EDE9', '#DCD3CA', '#BFB3A6'], // warm greige
+  ivory: ['#FFFFFF', '#F8F3EF', '#EBE2D8'],
+  cream: ['#FCF6ED', '#F1E7D7', '#E1D2BB'],
 };
 
 export interface PhotoProps {
@@ -53,8 +55,8 @@ function Placeholder({
   const [a, b, c] = TONES[tone];
   const cx = 30 + ((seed * 37) % 40);
   const cy = 26 + ((seed * 53) % 30);
-  const light = tone === 'ivory' || tone === 'cream' || tone === 'champagne';
-  const ink = light ? 'rgba(25,25,25,0.55)' : 'rgba(246,240,231,0.65)';
+  // Every tone is light now — labels always read in dark ink.
+  const ink = 'rgba(74,64,60,0.5)';
 
   return (
     <div
@@ -71,9 +73,7 @@ function Placeholder({
         style={{
           position: 'absolute',
           inset: 0,
-          background: `radial-gradient(60% 50% at ${cx}% ${cy - 6}%, rgba(255,247,230,${
-            light ? 0.5 : 0.28
-          }) 0%, transparent 60%)`,
+          background: `radial-gradient(60% 50% at ${cx}% ${cy - 6}%, rgba(255,252,248,0.55) 0%, transparent 60%)`,
           mixBlendMode: 'screen',
         }}
       />
@@ -92,7 +92,7 @@ function Placeholder({
         style={{
           position: 'absolute',
           inset: 0,
-          boxShadow: 'inset 0 0 160px 40px rgba(0,0,0,0.45)',
+          boxShadow: 'inset 0 0 130px 40px rgba(120,100,105,0.16)',
         }}
       />
       {label && (

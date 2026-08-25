@@ -59,18 +59,18 @@ export default function OurStory() {
   return (
     <section
       ref={root}
-      className="relative bg-charcoal px-6 py-32 text-ivory md:py-48"
+      className="relative bg-blush px-6 py-32 text-ink md:py-48"
     >
       <Reveal className="mx-auto mb-24 max-w-4xl text-center">
-        <p className="eyebrow mb-8 text-champagne">Chapter One</p>
-        <h2 className="display-lg text-ivory">
+        <p className="eyebrow mb-8 text-mauve">Chapter One</p>
+        <h2 className="display-lg text-ink">
           GOD WROTE
           <br />
           OUR STORY
         </h2>
         <div className="mx-auto mt-12 max-w-2xl space-y-1">
           {story.intro.map((l, i) => (
-            <p key={i} className="font-serif-e text-lg text-ivory/70 md:text-xl">
+            <p key={i} className="font-serif-e text-lg text-ink/70 md:text-xl">
               {l}
             </p>
           ))}
@@ -82,10 +82,10 @@ export default function OurStory() {
         className="relative mx-auto max-w-5xl"
       >
         {/* center rail */}
-        <div className="absolute left-6 top-0 h-full w-px -translate-x-1/2 bg-ivory/10 md:left-1/2" />
+        <div className="absolute left-6 top-0 h-full w-px -translate-x-1/2 bg-ink/10 md:left-1/2" />
         <div
           data-line-fill
-          className="absolute left-6 top-0 h-full w-px -translate-x-1/2 origin-top scale-y-0 bg-gradient-to-b from-champagne via-champagne/70 to-champagne/20 md:left-1/2"
+          className="absolute left-6 top-0 h-full w-px -translate-x-1/2 origin-top scale-y-0 bg-gradient-to-b from-rose via-rose/70 to-rose/20 md:left-1/2"
         />
 
         <div className="space-y-24 md:space-y-32">
@@ -100,17 +100,17 @@ export default function OurStory() {
                 {/* node dot */}
                 <span
                   data-node
-                  className="absolute left-6 top-1/2 z-10 h-3 w-3 -translate-x-1/2 -translate-y-1/2 rounded-full bg-champagne shadow-[0_0_20px_4px_rgba(199,167,106,0.5)] md:left-1/2"
+                  className="absolute left-6 top-1/2 z-10 h-3 w-3 -translate-x-1/2 -translate-y-1/2 rounded-full bg-rose shadow-[0_0_18px_4px_rgba(217,139,152,0.45)] md:left-1/2"
                 />
 
                 {/* text + photo, alternating on desktop */}
                 <div
                   className={`${left ? 'md:order-1 md:text-right md:pr-16' : 'md:order-2 md:pl-16'} col-span-1`}
                 >
-                  <p className="font-display text-5xl text-champagne md:text-7xl">
+                  <p className="font-display text-5xl text-mauve md:text-7xl">
                     {m.year}
                   </p>
-                  <p className="mt-2 font-serif-e text-xl text-ivory/80 md:text-2xl">
+                  <p className="mt-2 font-serif-e text-xl text-ink/80 md:text-2xl">
                     {m.title}
                   </p>
                 </div>

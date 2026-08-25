@@ -37,7 +37,7 @@ export default function ScriptureIntro() {
   return (
     <section
       ref={root}
-      className="flex min-h-[90vh] flex-col items-center justify-center bg-ivory px-6 py-40 text-charcoal"
+      className="flex min-h-[90vh] flex-col items-center justify-center bg-blush px-6 py-40 text-ink"
     >
       <span className="fineline-cross mb-16" data-line aria-hidden />
       <div className="max-w-3xl text-center">
@@ -45,12 +45,12 @@ export default function ScriptureIntro() {
           <p
             key={i}
             data-line
-            className="font-display text-3xl leading-tight text-charcoal/90 md:text-5xl"
+            className="font-display text-3xl leading-tight text-ink/90 md:text-5xl"
           >
             {line}
           </p>
         ))}
-        <p data-line className="eyebrow mt-14 text-champagne">
+        <p data-line className="eyebrow mt-14 text-mauve">
           {scriptures.love.ref}
         </p>
       </div>

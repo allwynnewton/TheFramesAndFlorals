@@ -51,7 +51,7 @@ export default function FinalBlessing() {
   );
 
   return (
-    <section ref={root} className="relative min-h-screen overflow-hidden bg-charcoal" data-music-vol="0.25">
+    <section ref={root} className="relative min-h-screen overflow-hidden bg-blush" data-music-vol="0.25">
       <div data-fb-img className="absolute inset-0">
         <Photo
           src={undefined}
@@ -63,7 +63,7 @@ export default function FinalBlessing() {
         />
       </div>
       {/* darken toward the bottom */}
-      <div className="absolute inset-0 bg-gradient-to-b from-charcoal/40 via-charcoal/60 to-charcoal" />
+      <div className="absolute inset-0 bg-gradient-to-b from-ink/40 via-ink/60 to-ink" />
 
       <div className="relative z-10 flex min-h-screen flex-col items-center justify-center px-6 py-32 text-center text-ivory">
         <h2 data-fb className="display-md text-ivory">
@@ -78,7 +78,7 @@ export default function FinalBlessing() {
           We cannot wait to celebrate this blessing with you.
         </p>
 
-        <p data-fb className="font-script mt-10 text-4xl text-champagne md:text-5xl">
+        <p data-fb className="font-script mt-10 text-4xl text-rose md:text-5xl">
           {couple.groom} &amp; {couple.bride}
         </p>
 
@@ -88,7 +88,7 @@ export default function FinalBlessing() {
             <br />
             and we are filled with joy.&rdquo;
           </p>
-          <p className="eyebrow mt-6 text-champagne">{scriptures.psalm.ref}</p>
+          <p className="eyebrow mt-6 text-rose">{scriptures.psalm.ref}</p>
         </div>
       </div>
     </section>

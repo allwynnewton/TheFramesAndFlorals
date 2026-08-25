@@ -54,16 +54,16 @@ export default function CovenantSection() {
       className="flex min-h-screen flex-col items-center justify-center px-6 py-40 text-center"
       style={{
         background:
-          'linear-gradient(180deg, #191919 0%, #17231d 50%, #101812 100%)',
+          'linear-gradient(180deg, #fbf4f2 0%, #eef2e9 50%, #f7e4e7 100%)',
       }}
     >
-      <h2 data-cov="heading" className="display-lg text-ivory">
+      <h2 data-cov="heading" className="display-lg text-ink">
         WHEN TWO
         <br />
         BECOME ONE
       </h2>
 
-      <div data-cov="copy" className="mt-10 space-y-1 font-serif-e text-lg text-ivory/70 md:text-xl">
+      <div data-cov="copy" className="mt-10 space-y-1 font-serif-e text-lg text-ink/70 md:text-xl">
         <p>Two lives.</p>
         <p>Two families.</p>
         <p>One covenant.</p>
@@ -71,16 +71,16 @@ export default function CovenantSection() {
 
       <span
         data-goldline
-        className="mt-14 h-px w-56 origin-center scale-x-0 bg-gradient-to-r from-transparent via-champagne to-transparent"
+        className="mt-14 h-px w-56 origin-center scale-x-0 bg-gradient-to-r from-transparent via-rose to-transparent"
       />
 
       <div data-cov="verse" className="mt-14 max-w-2xl">
-        <p className="font-display text-2xl leading-snug text-ivory/90 md:text-4xl">
+        <p className="font-display text-2xl leading-snug text-ink/90 md:text-4xl">
           &ldquo;Therefore what God has joined together,
           <br />
           let no one separate.&rdquo;
         </p>
-        <p className="eyebrow mt-8 text-champagne">{scriptures.covenant.ref}</p>
+        <p className="eyebrow mt-8 text-mauve">{scriptures.covenant.ref}</p>
       </div>
     </section>
   );
