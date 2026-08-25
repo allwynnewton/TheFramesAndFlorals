@@ -122,7 +122,8 @@ export const music = {
 // Creator / business identity for the WhatsApp enquiry CTA.
 // Single source of truth — change the name here and it updates everywhere.
 export const creator = {
-  brand: 'The Frames and Florals - Goa',
+  brand: 'Florals and Frames',
+  logo: '/images/companylogo.png',
   whatsappNumber: '917020727961', // digits only, for wa.me
   whatsappDisplay: '+91 7020727961',
   location: 'Goa, India',

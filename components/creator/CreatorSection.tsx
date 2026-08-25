@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import Reveal from '@/components/Reveal';
 import { creator, whatsappEnquiryUrl } from '@/lib/site';
 
@@ -38,6 +39,14 @@ export default function CreatorSection() {
 
         {/* Creator credit — brand emphasised, contact quiet */}
         <Reveal delay={0.15} className="mt-28 flex flex-col items-center gap-3">
+          <Image
+            src={creator.logo}
+            alt={`${creator.brand} logo`}
+            width={354}
+            height={412}
+            className="mb-6 h-24 w-auto md:h-28"
+            style={{ mixBlendMode: 'multiply' }}
+          />
           <p className="eyebrow text-ink/45">A digital love story by</p>
           <p className="font-display text-3xl text-mauve md:text-4xl">
             {creator.brand}
