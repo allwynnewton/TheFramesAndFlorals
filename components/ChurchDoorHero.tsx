@@ -3,7 +3,7 @@
 import { useRef } from 'react';
 import { gsap, ScrollTrigger, useGSAP } from '@/lib/gsap';
 import Photo from './Photo';
-import { couple, wedding } from '@/lib/site';
+import { couple, wedding, photos } from '@/lib/site';
 
 /**
  * SECTION 01 — THE CHURCH DOORS
@@ -172,7 +172,7 @@ export default function ChurchDoorHero() {
             style={{ boxShadow: '0 40px 110px -34px rgba(120,95,100,0.4)' }}
           >
             <Photo
-              src={undefined}
+              src={photos.hero}
               alt={`${couple.groom} and ${couple.bride} standing together in warm light`}
               tone="champagne"
               label="hero · couple"

@@ -3,7 +3,7 @@
 import { useRef } from 'react';
 import { gsap, useGSAP } from '@/lib/gsap';
 import Photo from './Photo';
-import { parallaxMoments } from '@/lib/site';
+import { parallaxMoments, photos } from '@/lib/site';
 
 const tones = ['forest', 'wine', 'champagne'] as const;
 
@@ -70,7 +70,7 @@ export default function ParallaxMemories() {
           {/* image is oversized so parallax never exposes edges */}
           <div data-par-img className="absolute inset-x-0 -top-[12%] h-[124%]">
             <Photo
-              src={undefined}
+              src={photos.parallax[i % photos.parallax.length]}
               alt={m.caption}
               tone={tones[i % tones.length]}
               label={`memory ${i + 1}`}

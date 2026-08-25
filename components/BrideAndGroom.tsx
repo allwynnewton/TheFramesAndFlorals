@@ -3,7 +3,7 @@
 import { useRef } from 'react';
 import { gsap, useGSAP } from '@/lib/gsap';
 import Photo from './Photo';
-import { couple } from '@/lib/site';
+import { couple, photos } from '@/lib/site';
 
 export default function BrideAndGroom() {
   const root = useRef<HTMLDivElement>(null);
@@ -70,8 +70,8 @@ export default function BrideAndGroom() {
   );
 
   const people = [
-    { name: couple.bride, role: 'The Bride', tone: 'wine' as const, side: 'left' as const, seed: 41 },
-    { name: couple.groom, role: 'The Groom', tone: 'forest' as const, side: 'right' as const, seed: 42 },
+    { name: couple.bride, role: 'The Bride', tone: 'wine' as const, side: 'left' as const, seed: 41, img: photos.bride },
+    { name: couple.groom, role: 'The Groom', tone: 'forest' as const, side: 'right' as const, seed: 42, img: photos.groom },
   ];
 
   return (
@@ -84,7 +84,7 @@ export default function BrideAndGroom() {
         >
           <div data-parallax-img className="absolute inset-0 scale-[1.06]">
             <Photo
-              src={undefined}
+              src={p.img}
               alt={`${p.name} — ${p.role}`}
               tone={p.tone}
               label={p.role}

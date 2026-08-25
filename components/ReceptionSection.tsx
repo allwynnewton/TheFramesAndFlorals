@@ -3,7 +3,7 @@
 import { useRef } from 'react';
 import { gsap, useGSAP } from '@/lib/gsap';
 import Photo from './Photo';
-import { wedding } from '@/lib/site';
+import { wedding, photos } from '@/lib/site';
 
 export default function ReceptionSection() {
   const root = useRef<HTMLDivElement>(null);
@@ -54,7 +54,7 @@ export default function ReceptionSection() {
   return (
     <section ref={root} className="relative min-h-screen overflow-hidden bg-mist text-ivory">
       <Photo
-        src={undefined}
+        src={photos.reception}
         alt="Warm celebration lights at the reception"
         tone="wine"
         seed={61}

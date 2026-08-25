@@ -3,7 +3,7 @@
 import { useRef } from 'react';
 import { gsap, useGSAP } from '@/lib/gsap';
 import Photo from './Photo';
-import { couple, scriptures } from '@/lib/site';
+import { couple, scriptures, photos } from '@/lib/site';
 
 export default function FinalBlessing() {
   const root = useRef<HTMLDivElement>(null);
@@ -54,7 +54,7 @@ export default function FinalBlessing() {
     <section ref={root} className="relative min-h-screen overflow-hidden bg-blush" data-music-vol="0.25">
       <div data-fb-img className="absolute inset-0">
         <Photo
-          src={undefined}
+          src={photos.farewell}
           alt="The couple walking away into the evening light"
           tone="wine"
           seed={71}

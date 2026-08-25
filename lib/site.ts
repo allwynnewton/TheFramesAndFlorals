@@ -119,6 +119,29 @@ export const music = {
   baseVolume: 0.4,
 };
 
+// Real photography. Multi-photo sections cycle through their array (repeating
+// if you provide fewer than the slots). To enrich a section, just add more
+// files and list them here — e.g. story: ['/images/2.jpg','/images/2b.jpg', …].
+export const photos = {
+  hero: '/images/1.jpg', // opening hero — the couple
+  story: ['/images/2.jpg'], // "God Wrote Our Story" milestones (4 slots on desktop)
+  parallax: ['/images/3.jpg', '/images/3-backup.jpg'], // full-screen parallax (3 slots)
+  proposal: ['/images/4.jpg'], // proposal sequence (3 slots)
+  bride: '/images/5-bride.jpg',
+  groom: '/images/5-groom.jpg',
+  // memory collage (5 slots) — filled with a varied mix so it looks full;
+  // swap in dedicated memory-*.jpg files whenever you have them.
+  memory: [
+    '/images/6.jpg',
+    '/images/2.jpg',
+    '/images/3.jpg',
+    '/images/4.jpg',
+    '/images/7.jpg',
+  ],
+  reception: '/images/7.jpg',
+  farewell: '/images/8.jpg', // final blessing
+};
+
 // Creator / business identity for the WhatsApp enquiry CTA.
 // Single source of truth — change the name here and it updates everywhere.
 export const creator = {

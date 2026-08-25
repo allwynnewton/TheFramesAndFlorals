@@ -4,7 +4,7 @@ import { useRef } from 'react';
 import { gsap, useGSAP } from '@/lib/gsap';
 import Photo from './Photo';
 import Reveal from './Reveal';
-import { story } from '@/lib/site';
+import { story, photos } from '@/lib/site';
 
 const tones = ['forest', 'wine', 'champagne', 'charcoal'] as const;
 
@@ -119,7 +119,7 @@ export default function OurStory() {
                   className={`${left ? 'md:order-2 md:pl-16' : 'md:order-1 md:pr-16'} hidden md:block`}
                 >
                   <Photo
-                    src={undefined}
+                    src={photos.story[i % photos.story.length]}
                     alt={`${m.year} — ${m.title}`}
                     tone={tones[i % tones.length]}
                     label={m.year}

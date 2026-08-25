@@ -3,7 +3,7 @@
 import { useRef } from 'react';
 import { gsap, useGSAP } from '@/lib/gsap';
 import Photo from './Photo';
-import { proposal } from '@/lib/site';
+import { proposal, photos } from '@/lib/site';
 
 export default function ProposalSequence() {
   const root = useRef<HTMLDivElement>(null);
@@ -79,7 +79,7 @@ export default function ProposalSequence() {
               className="relative shrink-0 md:w-[46vw]"
             >
               <Photo
-                src={undefined}
+                src={photos.proposal[i % photos.proposal.length]}
                 alt={`Proposal moment ${i + 1}`}
                 tone={(['wine', 'champagne', 'forest'] as const)[i]}
                 label={`proposal ${i + 1}`}

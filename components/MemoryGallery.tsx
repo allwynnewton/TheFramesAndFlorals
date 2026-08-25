@@ -4,6 +4,7 @@ import { useRef } from 'react';
 import { gsap, useGSAP } from '@/lib/gsap';
 import Photo from './Photo';
 import Reveal from './Reveal';
+import { photos } from '@/lib/site';
 
 // An intentionally irregular editorial collage (percent-based on desktop).
 const items = [
@@ -67,7 +68,7 @@ export default function MemoryGallery() {
             className={`${it.span} ${it.ar} md:aspect-auto shadow-[0_30px_70px_-40px_rgba(120,100,105,0.35)]`}
           >
             <Photo
-              src={undefined}
+              src={photos.memory[i % photos.memory.length]}
               alt={`Memory ${i + 1}`}
               tone={it.tone}
               label={it.label}
