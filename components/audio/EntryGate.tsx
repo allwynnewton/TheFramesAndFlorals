@@ -51,11 +51,12 @@ export default function EntryGate() {
   return (
     <div
       ref={root}
-      className="fixed inset-0 z-[90] flex flex-col items-center justify-center px-6 text-center"
+      className="fixed inset-0 z-[90] flex flex-col items-center justify-center overscroll-contain px-6 text-center"
       style={{
         background:
-          'linear-gradient(to bottom, rgba(251,244,242,0.82), rgba(251,244,242,0.62) 45%, rgba(251,244,242,0.86))',
-        backdropFilter: 'blur(2px)',
+          'linear-gradient(to bottom, rgba(251,244,242,0.9), rgba(251,244,242,0.72) 45%, rgba(251,244,242,0.93))',
+        backdropFilter: 'blur(3px)',
+        touchAction: 'none',
       }}
     >
       <p data-gate-item className="eyebrow text-mauve">

@@ -31,11 +31,12 @@ export default function ChurchDoorHero() {
       const announce = q('[data-announce]');
       const cue = q('[data-cue]');
       const arch = q('[data-arch]');
+      const heroScrim = q('[data-hero-scrim]');
 
       // ---------- REDUCED MOTION: show the resolved final frame ----------
       mm.add('(prefers-reduced-motion: reduce)', () => {
         gsap.set([leftDoor, rightDoor, cue, arch], { autoAlpha: 0 });
-        gsap.set([light, couplePhoto, names, above, below], { autoAlpha: 1 });
+        gsap.set([light, couplePhoto, names, above, below, heroScrim], { autoAlpha: 1 });
         gsap.set(couplePhoto, { filter: 'blur(0px)', scale: 1 });
         gsap.set(announce, { autoAlpha: 1, y: 0 });
         gsap.set(names, { y: -40 });
@@ -61,6 +62,7 @@ export default function ChurchDoorHero() {
           gsap.set(light, { autoAlpha: 0, scale: 0.6 });
           gsap.set(beam, { autoAlpha: 0, scaleY: 0.4 });
           gsap.set(couplePhoto, { autoAlpha: 0, scale: 1.08, filter: 'blur(14px)' });
+          gsap.set(heroScrim, { autoAlpha: 0 });
           gsap.set(above, { autoAlpha: 0, y: 12 });
           gsap.set(below, { autoAlpha: 0, y: 12 });
           gsap.set(nameLetters, { autoAlpha: 0, y: 24, letterSpacing: '0.18em' });
@@ -103,6 +105,7 @@ export default function ChurchDoorHero() {
               { autoAlpha: 1, scale: 1, filter: 'blur(0px)', duration: 2, ease: 'power2.out' },
               5,
             )
+            .to(heroScrim, { autoAlpha: 1, duration: 2, ease: 'power2.out' }, 5)
             .to(beam, { autoAlpha: 0.2, duration: 1.4 }, 5.6);
 
           // STAGE 5 — Names (7 → 8.6)
@@ -218,18 +221,33 @@ export default function ChurchDoorHero() {
           style={{ boxShadow: 'inset 0 0 220px 80px rgba(150,128,132,0.28)', opacity: 0.6 }}
         />
 
+        {/* ---- Soft scrim behind the hero text, so light type reads over the
+               couple photo (revealed with the couple) ---- */}
+        <div
+          data-hero-scrim
+          className="pointer-events-none absolute inset-0"
+          style={{
+            background:
+              'radial-gradient(74% 62% at 50% 50%, rgba(33,26,30,0.52) 0%, rgba(33,26,30,0.32) 46%, transparent 78%)',
+          }}
+          aria-hidden
+        />
+
         {/* ---- Names + text overlays ---- */}
-        <div className="pointer-events-none absolute inset-0 flex flex-col items-center justify-center px-6 text-center">
-          <p data-above className="eyebrow text-ink/75">
+        <div
+          className="pointer-events-none absolute inset-0 flex flex-col items-center justify-center px-6 text-center"
+          style={{ textShadow: '0 2px 22px rgba(25,18,22,0.5)' }}
+        >
+          <p data-above className="eyebrow text-ivory/85">
             Together with their families
           </p>
 
           <div data-names className="my-4">
-            <h1 className="display-xl text-ink">
+            <h1 className="display-xl text-ivory">
               <span data-name-line className="block">
                 {couple.groom.toUpperCase()}
               </span>
-              <span data-name-line className="block font-script text-mauve text-[0.42em] leading-none my-1">
+              <span data-name-line className="block font-script text-rose text-[0.42em] leading-none my-1">
                 &amp;
               </span>
               <span data-name-line className="block">
@@ -238,17 +256,17 @@ export default function ChurchDoorHero() {
             </h1>
           </div>
 
-          <p data-below className="eyebrow text-ink/75">
+          <p data-below className="eyebrow text-ivory/85">
             invite you to celebrate their wedding
           </p>
 
           {/* Announcement overlaps, revealed last */}
           <div data-announce className="absolute bottom-[10%] flex flex-col items-center gap-3">
-            <p className="eyebrow text-mauve">We&apos;re getting married</p>
-            <p className="font-display text-2xl md:text-4xl text-ink tracking-wide">
+            <p className="eyebrow text-rose">We&apos;re getting married</p>
+            <p className="font-display text-2xl md:text-4xl text-ivory tracking-wide">
               {wedding.dateLabel}
             </p>
-            <p className="eyebrow text-ink/70">{wedding.city}</p>
+            <p className="eyebrow text-ivory/80">{wedding.city}</p>
           </div>
         </div>
 

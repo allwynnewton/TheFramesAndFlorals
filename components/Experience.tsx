@@ -34,17 +34,56 @@ export default function Experience() {
   const [loading, setLoading] = useState(true);
   const { hasEntered } = useMusic();
 
-  // Scroll stays locked through the loader AND the entry invitation.
+  // Scroll stays fully locked through the loader AND the entry invitation, so
+  // the visitor can't scroll the site behind the gate before choosing.
   useEffect(() => {
     const locked = loading || !hasEntered;
-    document.body.style.overflow = locked ? 'hidden' : '';
-    if (!locked) {
+    const html = document.documentElement;
+    const body = document.body;
+
+    // Lock the real scroll container (html) as well as body — locking body
+    // alone leaks because html is the scroller.
+    const lock = (on: boolean) => {
+      html.style.overflow = on ? 'hidden' : '';
+      body.style.overflow = on ? 'hidden' : '';
+    };
+
+    // Actively block every scroll input while gated — overflow:hidden alone
+    // doesn't reliably stop wheel/touch/keyboard, so the page can't move behind
+    // the gate until the visitor chooses.
+    const preventDefault = (e: Event) => e.preventDefault();
+    const SCROLL_KEYS = new Set([
+      'ArrowUp',
+      'ArrowDown',
+      'PageUp',
+      'PageDown',
+      'Home',
+      'End',
+      ' ',
+      'Spacebar',
+    ]);
+    const preventKeys = (e: KeyboardEvent) => {
+      const target = e.target as HTMLElement | null;
+      const typing = target && /^(INPUT|TEXTAREA|SELECT)$/.test(target.tagName);
+      if (!typing && SCROLL_KEYS.has(e.key)) e.preventDefault();
+    };
+
+    lock(locked);
+    if (locked) {
+      window.addEventListener('wheel', preventDefault, { passive: false });
+      window.addEventListener('touchmove', preventDefault, { passive: false });
+      window.addEventListener('keydown', preventKeys);
+    } else {
       window.scrollTo(0, 0);
       // pin/scrub triggers were measured behind overlays; recompute now.
       requestAnimationFrame(() => ScrollTrigger.refresh());
     }
+
     return () => {
-      document.body.style.overflow = '';
+      lock(false);
+      window.removeEventListener('wheel', preventDefault);
+      window.removeEventListener('touchmove', preventDefault);
+      window.removeEventListener('keydown', preventKeys);
     };
   }, [loading, hasEntered]);
 
